@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/vue@2"></script>
+
+
+    <div id="app" > 
+        <div class="card">
+
+
+            <div class="container">
+                <h1> Jogador </h1>
+                <div class="lifeBar">
+                    <div 
+                        class="life" 
+                        :style="{width: playerLife + '%', backgroundColor: colorLife(playerLife)}"></div>
+                </div>
+                <p :style="{fontSize:'20px'}"> {{ playerLife }}% </p>
+            </div>
+
+
+            <div class="container">
+                <h1> Monstro </h1>
+                <div class="lifeBar">
+                    <div 
+                        class="life" 
+                        :style="{width: monsterLife + '%', backgroundColor: colorLife(monsterLife)}"></div>
+                </div>
+                <p :style="{fontSize:'20px'}"> {{ monsterLife }}% </p>
+            </div>
+        </div>
+
+        <div class="card" v-if="isPlaying">
+            <button 
+                class="buttonStyle" 
+                :style="{backgroundColor:'red', color:'white'}"
+                @click="attack()"> ATAQUE </button>
+
+            <button 
+                class="buttonStyle" 
+                :style="{backgroundColor:'orange'}"
+                @click="especialAttack()"> ATAQUE ESPECIAL </button>
+
+            <button 
+                class="buttonStyle" 
+                :style="{backgroundColor:'green'}"
+                @click="heal()"> CURAR </button>
+
+            <button 
+                class="buttonStyle" 
+                :style="{backgroundColor:'grey'}"
+                @click="giveUp = true"> DESISTIR </button>
+        </div>
+
+        <div class="card" v-if="!startGame">
+            <div 
+                class="buttonStyle" 
+                :style="{backgroundColor:'blue', color:'white'}"
+                @click="startGame = true"> Iniciar Jogo </div>
+        </div>
+
+        <div v-if="isEndGame">
+            <div class="card">
+                <p 
+                :style="{fontSize:'25px' ,color: isPlayerWin ? 'green' : 'red'}">
+                {{ isPlayerWin ? "Você ganhou!!! :)" : "Você perdeu :("}}</p>
+            </div>
+        </div>
+
+        <div class="card" v-if="isEndGame || giveUp">
+            <div 
+                class="buttonStyle" 
+                :style="{backgroundColor:'blue', color:'white'}"
+                @click="newGame()"> Iniciar Novo Jogo </div>
+        </div>
+        <!--  -->
+        <div class="card" :style="{flexDirection:'column'}" v-if="isPlaying && hasLog">
+            <div v-for="(log, index) in [...logs].reverse()">
+                <div class="logStyle" :style="{backgroundColor: isEven(index) ? '#838DC6' : '#E27777'}">
+                    <p :style="{fontSize:'18px', color:'white'}"> {{ log }} </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+<script src="app.js"></script>
