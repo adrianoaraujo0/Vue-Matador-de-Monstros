@@ -28,7 +28,7 @@ Vue-matador-de-monstros/
 ```
 
 ## 📸 Captura de Tela
-![image](https://github.com/user-attachments/assets/0014bc1d-4f9b-4425-b114-efb3d9fc5688)
+![image](https://github.com/user-attachments/assets/7fbbb73e-0fed-4881-b0f5-94e0ae3ed978)
 
 ## 🛠 Como Executar o Projeto
 1. Baixe ou clone este repositório:
