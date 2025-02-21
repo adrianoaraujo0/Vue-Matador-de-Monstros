@@ -1,3 +1,7 @@
+body {
+    font-family: 'Montserrat';
+}
+
 .card {
     padding: 20px;
     margin: 20px;
@@ -6,7 +10,6 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para elevação */
     text-align: center;
     display: flex;
-    gap: 20px;
     align-items: center;
     justify-content: space-around; 
 }
@@ -14,7 +17,7 @@
 .lifeBar{
     width: 600px;
     height: 30px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .life{
@@ -31,17 +34,25 @@
     height: 35px;
     border-radius: 5px;
     padding: 3px 7px;
+    margin: 5px 20px;
     align-items: center;
     display: flex;
-    border: 1px solid black;
+    border: 0px solid black;
+    font-size: 1.1rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
 }
 
 .logStyle{
     height: 35px;
     width: 1000px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: none;
     display: flex; /* Ativa o flexbox */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
+    margin: 10px 10px;
 }

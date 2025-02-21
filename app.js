@@ -25,11 +25,13 @@ new Vue({
             let attack = this.probabilityValue(especial);
             let remainingLife = this.monsterLife - attack;
             this.monsterLife = this.roundToZero(remainingLife);
+            this.logs.push("JOGADOR ATINGIU MONSTRO COM " + attack);
         },
         attackPlayer(){
             let attack = this.probabilityValue(20);
             let remainingLife = this.playerLife - attack;
             this.playerLife = this.roundToZero(remainingLife)
+            this.logs.push("MONSTRO ATINGIU JOGADOR COM " + attack);
         },
         probabilityValue(probability){
             return Math.floor(Math.random() * probability);
@@ -54,7 +56,6 @@ new Vue({
         isEven(value){
             return value % 2 == 0;
         }
-   
     },
     computed:{
         isEndGame(){
